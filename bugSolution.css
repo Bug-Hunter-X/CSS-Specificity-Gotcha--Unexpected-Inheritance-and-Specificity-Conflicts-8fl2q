@@ -1,0 +1,27 @@
+The solution involves carefully adjusting the CSS selectors to ensure the desired specificity and inheritance are applied consistently.
+
+Here's a corrected version:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+.container p {
+  color: green;
+}
+
+.container .special {
+  color: purple;
+}
+
+.container .special div {
+    color: yellow !important; /* Added !important to override previous selectors */
+}
+```
+
+By adding `!important` to the `color: yellow` declaration, we explicitly override previous declarations.  However, using `!important` should be done sparingly, as it can make CSS harder to maintain.  A more elegant solution may involve restructuring the CSS classes to eliminate conflicts.
