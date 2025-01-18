@@ -1,0 +1,29 @@
+The following CSS code snippet demonstrates an unusual issue related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+.container p {
+  color: green;
+}
+
+.container .special {
+  color: purple;
+}
+
+.container div.special {
+    color: orange;
+}
+
+.container .special div {
+    color: yellow;
+}
+```
+
+In this scenario, a `div` element inside a `.container` with the class `special` has conflicting styles.  The specificity rules might not behave as expected for developers unfamiliar with CSS specificity nuances.
